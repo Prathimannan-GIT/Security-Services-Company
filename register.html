@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+    Sentinel Secure Services
+    Register Page
+  -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Client Registration | Sentinel Secure Services</title>
+  <meta name="description" content="Create a secure client portal account for Sentinel Secure Services. Professional registration with password strength guidance." />
+
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="assets/css/auth.css" />
+</head>
+<body>
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Sentinel Secure Services Home">
+        <img src="assets/img/logo.svg" alt="Sentinel Secure Services Logo" />
+        <span class="brand-title">
+          <strong>Sentinel Secure Services</strong>
+          <span>Intelligence. Vigilance. Protection.</span>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <a data-nav href="index.html">Home</a>
+        <a data-nav href="about.html">About</a>
+        <a data-nav href="services.html">Services</a>
+      </nav>
+
+      <div class="nav-actions" aria-label="Primary actions">
+        <a class="btn small" href="login.html">Client Login</a>
+        <a class="btn primary small" href="register.html">Register</a>
+      </div>
+
+      <button class="btn ghost small mobile-toggle" type="button" data-mobile-toggle aria-expanded="false" aria-controls="mobileMenu">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M4 7H20" stroke="rgba(255,255,255,0.86)" stroke-width="2" stroke-linecap="round" />
+          <path d="M4 12H20" stroke="rgba(255,255,255,0.86)" stroke-width="2" stroke-linecap="round" />
+          <path d="M4 17H20" stroke="rgba(255,255,255,0.86)" stroke-width="2" stroke-linecap="round" />
+        </svg>
+        Menu
+      </button>
+    </div>
+
+    <div class="container mobile-panel" id="mobileMenu" data-mobile-panel>
+      <nav class="nav" aria-label="Mobile">
+        <a data-nav href="index.html">Home</a>
+        <a data-nav href="about.html">About</a>
+        <a data-nav href="services.html">Services</a>
+        <a data-nav href="login.html">Client Login</a>
+        <a data-nav href="register.html">Register</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="auth-shell">
+    <div class="auth-grid">
+      <div class="auth-visual" aria-hidden="true">
+        <img src="assets/img/auth-illustration.svg" alt="" />
+      </div>
+
+      <section class="auth-panel" aria-label="Client registration">
+        <span class="badge"><span class="dot" aria-hidden="true"></span> Client Portal Registration</span>
+        <h1 class="auth-title">Create your client account</h1>
+        <p class="auth-subtitle">Register to access live monitoring, alerts, incident reporting, and compliance documents.</p>
+
+        <form id="registerForm" class="form-grid" style="margin-top: 14px;" novalidate>
+          <!-- Organization + Contact -->
+          <div class="form-row">
+            <div class="field">
+              <label for="organization">Organization Name</label>
+              <input class="input" id="organization" name="organization" type="text" autocomplete="organization" required />
+              <div class="error" id="orgError" hidden>Please enter your organization name.</div>
+            </div>
+
+            <div class="field">
+              <label for="contactName">Authorized Contact</label>
+              <input class="input" id="contactName" name="contactName" type="text" autocomplete="name" required />
+              <div class="error" id="nameError" hidden>Please enter an authorized contact name.</div>
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div class="field">
+            <label for="email">Business Email</label>
+            <input class="input" id="email" name="email" type="email" autocomplete="email" required />
+            <div class="error" id="emailError" hidden>Please enter a valid email address.</div>
+          </div>
+
+          <!-- Password -->
+          <div class="form-row">
+            <div class="field">
+              <label for="password">Password</label>
+              <input class="input" id="password" name="password" type="password" autocomplete="new-password" required />
+              <div class="helper">Use 8+ characters with a mix of letters, numbers, and symbols.</div>
+              <div class="error" id="pwError" hidden>Password must be at least 8 characters.</div>
+            </div>
+
+            <div class="field">
+              <label for="confirmPassword">Confirm Password</label>
+              <input class="input" id="confirmPassword" name="confirmPassword" type="password" autocomplete="new-password" required />
+              <div class="error" id="confirmError" hidden>Passwords do not match.</div>
+            </div>
+          </div>
+
+          <!-- Password Strength -->
+          <div class="password-meter" aria-label="Password strength">
+            <div class="meter" aria-hidden="true"><div id="meterFill"></div></div>
+            <div class="meter-label" id="meterLabel">Password strength</div>
+          </div>
+
+          <!-- Terms -->
+          <div class="field">
+            <label style="display:flex; gap: 10px; align-items: center;">
+              <input type="checkbox" name="terms" id="terms" />
+              <span>I agree to the Terms &amp; Conditions and acknowledge the Privacy and Data Protection policies.</span>
+            </label>
+            <div class="error" id="termsError" hidden>You must accept the terms to continue.</div>
+          </div>
+
+          <!-- Submit -->
+          <div style="display:flex; gap: 12px; flex-wrap: wrap; align-items: center;">
+            <button class="btn primary" type="submit">Create account</button>
+            <a class="btn" href="login.html">Back to login</a>
+            <span class="helper" id="registerStatus" role="status" aria-live="polite"></span>
+          </div>
+
+          <div class="auth-note" role="note">
+            Your organization details help us personalize dashboard reporting and service requests.
+          </div>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-bottom">
+      <div class="container">
+        © 2026 Sentinel Secure Services. All rights reserved. Unauthorized access is prohibited.
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/auth.js"></script>
+</body>
+</html>

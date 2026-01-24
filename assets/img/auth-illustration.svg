@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="720" viewBox="0 0 960 720" fill="none">
+  <!--
+    Sentinel Secure Services - Authentication Illustration (SVG)
+    Security-themed scene: shield, grid, and monitoring nodes.
+  -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="960" y2="720" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0A0F1A"/>
+      <stop offset="1" stop-color="#0B1426"/>
+    </linearGradient>
+    <linearGradient id="g" x1="140" y1="90" x2="800" y2="640" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#5DD6FF" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#7C5CFF" stop-opacity="0.9"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(710 190) rotate(90) scale(220 240)">
+      <stop stop-color="#5DD6FF" stop-opacity="0.20"/>
+      <stop offset="1" stop-color="#5DD6FF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="960" height="720" rx="28" fill="url(#bg)"/>
+  <rect x="0" y="0" width="960" height="720" rx="28" fill="url(#glow)"/>
+
+  <!-- Grid lines -->
+  <g opacity="0.18" stroke="#FFFFFF">
+    <path d="M120 120H840"/>
+    <path d="M120 190H840"/>
+    <path d="M120 260H840"/>
+    <path d="M120 330H840"/>
+    <path d="M120 400H840"/>
+    <path d="M120 470H840"/>
+    <path d="M120 540H840"/>
+    <path d="M120 610H840"/>
+
+    <path d="M180 90V660"/>
+    <path d="M280 90V660"/>
+    <path d="M380 90V660"/>
+    <path d="M480 90V660"/>
+    <path d="M580 90V660"/>
+    <path d="M680 90V660"/>
+    <path d="M780 90V660"/>
+  </g>
+
+  <!-- Shield -->
+  <path d="M480 130c64 54 142 70 220 80v160c0 132-82 214-220 262C342 584 260 502 260 370V210c78-10 156-26 220-80Z" fill="rgba(255,255,255,0.03)" stroke="url(#g)" stroke-width="10"/>
+
+  <!-- Pulse line -->
+  <path d="M318 392h104l34-70 54 150 34-80h90" stroke="url(#g)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Monitoring nodes -->
+  <g>
+    <circle cx="250" cy="190" r="8" fill="#5DD6FF" opacity="0.85"/>
+    <circle cx="830" cy="250" r="8" fill="#7C5CFF" opacity="0.85"/>
+    <circle cx="740" cy="610" r="8" fill="#5DD6FF" opacity="0.75"/>
+    <circle cx="210" cy="570" r="8" fill="#7C5CFF" opacity="0.75"/>
+    <path d="M250 190C340 210 392 264 426 320" stroke="#5DD6FF" stroke-opacity="0.25" stroke-width="4"/>
+    <path d="M830 250C740 280 666 318 610 370" stroke="#7C5CFF" stroke-opacity="0.25" stroke-width="4"/>
+    <path d="M740 610C640 580 584 530 540 470" stroke="#5DD6FF" stroke-opacity="0.22" stroke-width="4"/>
+  </g>
+
+  <!-- Caption blocks -->
+  <g opacity="0.9">
+    <rect x="120" y="90" width="240" height="54" rx="12" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.10)"/>
+    <rect x="600" y="90" width="240" height="54" rx="12" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.10)"/>
+    <rect x="120" y="660" width="280" height="40" rx="12" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.10)"/>
+  </g>
+</svg>

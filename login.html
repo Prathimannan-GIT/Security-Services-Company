@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+    Sentinel Secure Services
+    Login Page
+  -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Client Login | Sentinel Secure Services</title>
+  <meta name="description" content="Secure client portal access for Sentinel Secure Services. Authorized access only. All activity is logged." />
+
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="assets/css/auth.css" />
+</head>
+<body>
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Sentinel Secure Services Home">
+        <img src="assets/img/logo.svg" alt="Sentinel Secure Services Logo" />
+        <span class="brand-title">
+          <strong>Sentinel Secure Services</strong>
+          <span>Intelligence. Vigilance. Protection.</span>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <a data-nav href="index.html">Home</a>
+        <a data-nav href="about.html">About</a>
+        <a data-nav href="services.html">Services</a>
+      </nav>
+
+      <div class="nav-actions" aria-label="Primary actions">
+        <a class="btn small" href="register.html">Register</a>
+        <a class="btn primary small" href="login.html">Client Login</a>
+      </div>
+
+      <button class="btn ghost small mobile-toggle" type="button" data-mobile-toggle aria-expanded="false" aria-controls="mobileMenu">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M4 7H20" stroke="rgba(255,255,255,0.86)" stroke-width="2" stroke-linecap="round" />
+          <path d="M4 12H20" stroke="rgba(255,255,255,0.86)" stroke-width="2" stroke-linecap="round" />
+          <path d="M4 17H20" stroke="rgba(255,255,255,0.86)" stroke-width="2" stroke-linecap="round" />
+        </svg>
+        Menu
+      </button>
+    </div>
+
+    <div class="container mobile-panel" id="mobileMenu" data-mobile-panel>
+      <nav class="nav" aria-label="Mobile">
+        <a data-nav href="index.html">Home</a>
+        <a data-nav href="about.html">About</a>
+        <a data-nav href="services.html">Services</a>
+        <a data-nav href="register.html">Register</a>
+        <a data-nav href="login.html">Client Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="auth-shell">
+    <div class="auth-grid">
+      <div class="auth-visual" aria-hidden="true">
+        <img src="assets/img/auth-illustration.svg" alt="" />
+      </div>
+
+      <section class="auth-panel" aria-label="Client login">
+        <span class="badge"><span class="dot" aria-hidden="true"></span> Secure Client Portal</span>
+        <h1 class="auth-title">Client Login</h1>
+        <p class="auth-subtitle">Access monitoring, alerts, incident reports, and compliance documentation.</p>
+
+        <div class="auth-note" role="note">
+          <strong>Authorized access only.</strong> All activity is logged.
+        </div>
+
+        <form id="loginForm" class="form-grid" style="margin-top: 14px;" novalidate>
+          <!-- Email -->
+          <div class="field">
+            <label for="email">Business Email</label>
+            <input class="input" id="email" name="email" type="email" autocomplete="email" required />
+            <div class="error" id="emailError" hidden>Please enter a valid email address.</div>
+          </div>
+
+          <!-- Password -->
+          <div class="field">
+            <div class="inline">
+              <label for="password">Password</label>
+              <a class="link" href="register.html">Need an account?</a>
+            </div>
+            <input class="input" id="password" name="password" type="password" autocomplete="current-password" required />
+            <div class="error" id="passwordError" hidden>Please enter your password.</div>
+          </div>
+
+          <div style="display:flex; gap: 12px; flex-wrap: wrap; align-items: center;">
+            <button class="btn primary" type="submit">Sign in</button>
+            <button class="btn" type="button" id="fillDemo">Use Demo Credentials</button>
+            <span class="helper" id="loginStatus" role="status" aria-live="polite"></span>
+          </div>
+
+          <div class="auth-note" role="note">
+            <strong>Demo access:</strong> Email <span style="color: var(--text);">client@sentinelsecure.example</span> and password <span style="color: var(--text);">Sentinel@2026</span>.
+          </div>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-bottom">
+      <div class="container">
+        © 2026 Sentinel Secure Services. All rights reserved. Unauthorized access is prohibited.
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/auth.js"></script>
+</body>
+</html>

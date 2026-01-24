@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+    Sentinel Secure Services
+    Client Dashboard
+    - Session-protected (front-end demo)
+    - Left sidebar navigation with rich modules
+  -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Client Dashboard | Sentinel Secure Services</title>
+  <meta name="description" content="Client dashboard for monitoring, alerts, incidents, access logs, service requests, and compliance documents." />
+
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="assets/css/dashboard.css" />
+  <link rel="stylesheet" href="assets/css/chatbot.css" />
+</head>
+<body data-require-session>
+  <div class="dash">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" id="sidebar" aria-label="Dashboard navigation">
+      <!-- Brand -->
+      <a class="brand" href="index.html" aria-label="Sentinel Secure Services Home">
+        <img src="assets/img/logo.svg" alt="Sentinel Secure Services Logo" />
+        <span class="brand-title">
+          <strong>Sentinel Secure Services</strong>
+          <span>Client Portal</span>
+        </span>
+      </a>
+
+      <!-- Signed-in profile summary -->
+      <div class="card profile-card" aria-label="Signed in account">
+        <p class="sidebar-title">Signed in as</p>
+        <div class="profile-name" id="userName">Authorized Contact</div>
+        <div class="profile-meta" id="userOrg">Client Organization</div>
+        <div class="profile-meta" id="userRole">Client User</div>
+        <div class="profile-meta" id="userEmail"></div>
+      </div>
+
+      <!-- Sidebar items -->
+      <nav class="nav-group" aria-label="Portal sections">
+        <button class="nav-item active" type="button" data-route="overview">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M4 12H10V20H4V12Z" stroke="rgba(255,255,255,0.86)" stroke-width="2"/>
+            <path d="M14 4H20V20H14V4Z" stroke="rgba(255,255,255,0.86)" stroke-width="2"/>
+            <path d="M4 8H10" stroke="rgba(255,255,255,0.86)" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          Dashboard Overview
+        </button>
+
+        <button class="nav-item" type="button" data-route="monitoring">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M3 12C7 5 17 5 21 12C17 19 7 19 3 12Z" stroke="rgba(255,255,255,0.86)" stroke-width="2"/>
+            <path d="M12 15C13.7 15 15 13.7 15 12C15 10.3 13.7 9 12 9C10.3 9 9 10.3 9 12C9 13.7 10.3 15 12 15Z" stroke="rgba(255,255,255,0.86)" stroke-width="2"/>
+          </svg>
+          Live Monitoring
+        </button>
+
+        <button class="nav-item" type="button" data-route="alerts">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M12 2C8 5 6 8 6 12C6 16 9 20 12 22C15 20 18 16 18 12C18 8 16 5 12 2Z" stroke="rgba(255,255,255,0.86)" stroke-width="2"/>
+            <path d="M12 8V13" stroke="rgba(255,255,255,0.86)" stroke-width="2" stroke-linecap="round"/>
+            <path d="M12 17H12.01" stroke="rgba(255,255,255,0.86)" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+          Alerts
+        </button>
+
+        <button class="nav-item" type="button" data-route="incidents">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M4 5H20" stroke="rgba(255,255,255,0.86)" stroke-width="2" stroke-linecap="round"/>
+            <path d="M4 12H20" stroke="rgba(255,255,255,0.86)" stroke-width="2" stroke-linecap="round"/>
+            <path d="M4 19H20" stroke="rgba(255,255,255,0.86)" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          Incident Reports
+        </button>
+
+        <button class="nav-item" type="button" data-route="access">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M8 11V7C8 4.8 9.8 3 12 3C14.2 3 16 4.8 16 7V11" stroke="rgba(255,255,255,0.86)" stroke-width="2" stroke-linecap="round"/>
+            <path d="M6 11H18V21H6V11Z" stroke="rgba(255,255,255,0.86)" stroke-width="2"/>
+          </svg>
+          Access Logs
+        </button>
+
+        <button class="nav-item" type="button" data-route="requests">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M4 6H20" stroke="rgba(255,255,255,0.86)" stroke-width="2" stroke-linecap="round"/>
+            <path d="M4 12H20" stroke="rgba(255,255,255,0.86)" stroke-width="2" stroke-linecap="round"/>
+            <path d="M4 18H14" stroke="rgba(255,255,255,0.86)" stroke-width="2" stroke-linecap="round"/>
+            <path d="M17 18L20 21" stroke="rgba(255,255,255,0.86)" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          Service Requests
+        </button>
+
+        <button class="nav-item" type="button" data-route="compliance">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M6 2H14L18 6V22H6V2Z" stroke="rgba(255,255,255,0.86)" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M14 2V6H18" stroke="rgba(255,255,255,0.86)" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M8 12H16" stroke="rgba(255,255,255,0.86)" stroke-width="2" stroke-linecap="round"/>
+            <path d="M8 16H16" stroke="rgba(255,255,255,0.86)" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          Compliance
+        </button>
+
+        <button class="nav-item" type="button" data-route="profile">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M20 21C20 17.7 16.4 15 12 15C7.6 15 4 17.7 4 21" stroke="rgba(255,255,255,0.86)" stroke-width="2" stroke-linecap="round"/>
+            <path d="M12 12C14.2 12 16 10.2 16 8C16 5.8 14.2 4 12 4C9.8 4 8 5.8 8 8C8 10.2 9.8 12 12 12Z" stroke="rgba(255,255,255,0.86)" stroke-width="2"/>
+          </svg>
+          Profile
+        </button>
+      </nav>
+
+      <!-- Sidebar footer actions -->
+      <div class="sidebar-footer">
+        <a class="btn" href="index.html">Return to Website</a>
+        <a class="btn primary" href="#" data-logout>Logout</a>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main" aria-label="Dashboard content">
+      <div class="topbar">
+        <div class="topbar-left">
+          <button class="btn small mobile-sidebar-toggle" id="sidebarToggle" type="button" aria-label="Open dashboard menu">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M4 7H20" stroke="rgba(255,255,255,0.86)" stroke-width="2" stroke-linecap="round" />
+              <path d="M4 12H20" stroke="rgba(255,255,255,0.86)" stroke-width="2" stroke-linecap="round" />
+              <path d="M4 17H20" stroke="rgba(255,255,255,0.86)" stroke-width="2" stroke-linecap="round" />
+            </svg>
+            Menu
+          </button>
+
+          <div>
+            <p class="page-title" id="pageTitle">Dashboard Overview</p>
+            <p class="page-subtitle" id="pageSubtitle">Key metrics, program snapshot, and compliance posture</p>
+          </div>
+        </div>
+
+        <div style="display:flex; gap: 10px; flex-wrap: wrap; align-items:center;">
+          <span class="badge"><span class="dot" aria-hidden="true"></span> Monitoring active</span>
+          <a class="btn small" href="services.html">Service Catalog</a>
+        </div>
+      </div>
+
+      <!-- Overview -->
+      <section class="view active" data-view="overview" aria-label="Dashboard overview">
+        <div class="view-grid">
+          <div class="kpi-grid" aria-label="Key metrics">
+            <div class="card kpi">
+              <span>Active Sites</span>
+              <strong id="kpiActiveSites">0</strong>
+              <span>Sites under Sentinel monitoring</span>
+            </div>
+            <div class="card kpi">
+              <span>Live Alerts</span>
+              <strong id="kpiLiveAlerts">0</strong>
+              <span>High/medium priority items</span>
+            </div>
+            <div class="card kpi">
+              <span>Incidents This Month</span>
+              <strong id="kpiIncidents">0</strong>
+              <span>Severity tracked and documented</span>
+            </div>
+            <div class="card kpi">
+              <span>Compliance Status</span>
+              <strong id="kpiCompliance">-</strong>
+              <span>Based on active high-severity items</span>
+            </div>
+          </div>
+
+          <div id="overviewSummary" class="cards-2"></div>
+
+          <div class="cards-2">
+            <div class="card">
+              <div class="kicker">What you can do here</div>
+              <h2 class="h2">A clear operational view in under 3 seconds.</h2>
+              <ul class="list">
+                <li>Check site status (Green / Amber / Red) and last activity timestamps</li>
+                <li>Review alerts with priority tags and verification details</li>
+                <li>Download incident summaries and track remediation steps</li>
+                <li>Filter access logs by date range, category, and site</li>
+                <li>Submit service requests with tracking IDs and status updates</li>
+                <li>View and download compliance documentation</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <div class="kicker">Security posture reminders</div>
+              <h2 class="h2">Operational discipline reduces risk.</h2>
+              <p class="p">For best outcomes, align access governance, incident reporting, and monitoring thresholds with your current risk environment.</p>
+              <ul class="list">
+                <li>Maintain accurate authorized contacts and escalation approvals</li>
+                <li>Review incident trends monthly for corrective actions</li>
+                <li>Confirm visitor workflows during high-traffic business periods</li>
+                <li>Keep compliance documentation current for audits</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Live Monitoring -->
+      <section class="view" data-view="monitoring" aria-label="Live monitoring">
+        <div class="view-grid">
+          <div class="card">
+            <div class="kicker">Client Site Monitoring</div>
+            <h2 class="h2">Live site status with accountability and clear escalation readiness.</h2>
+            <p class="p">Status colors indicate operational posture. Red items require immediate attention or active remediation.</p>
+          </div>
+          <div class="cards-3" id="monitoringGrid"></div>
+        </div>
+      </section>
+
+      <!-- Alerts -->
+      <section class="view" data-view="alerts" aria-label="Alert center">
+        <div class="view-grid">
+          <div class="card">
+            <div class="kicker">Alert Center</div>
+            <h2 class="h2">Prioritized alerts with clear triage details.</h2>
+            <p class="p">Alerts are categorized and tagged by priority to support quick decision-making and rapid escalation.</p>
+          </div>
+          <div class="view-grid" id="alertsList"></div>
+        </div>
+      </section>
+
+      <!-- Incidents -->
+      <section class="view" data-view="incidents" aria-label="Incident reports and analytics">
+        <div class="view-grid">
+          <div class="card">
+            <div class="kicker">Incident Reports &amp; Analytics</div>
+            <h2 class="h2">Incident history timeline with severity and report downloads.</h2>
+            <p class="p">Each incident includes structured notes and actions taken to support audit readiness and measurable remediation.</p>
+          </div>
+          <div class="timeline" id="incidentTimeline"></div>
+        </div>
+      </section>
+
+      <!-- Access Logs -->
+      <section class="view" data-view="access" aria-label="Access control logs">
+        <div class="view-grid">
+          <div class="card">
+            <div class="kicker">Access Control Logs</div>
+            <h2 class="h2">Employee entry logs and visitor access records.</h2>
+            <p class="p">Use filters to narrow down records without UI overflow. This table is designed for secure readability on desktop and mobile.</p>
+          </div>
+
+          <div class="card">
+            <div class="table-controls" aria-label="Access log filters">
+              <div class="field" style="min-width: 220px;">
+                <label for="filterFrom">From</label>
+                <input class="input" id="filterFrom" type="date" />
+              </div>
+              <div class="field" style="min-width: 220px;">
+                <label for="filterTo">To</label>
+                <input class="input" id="filterTo" type="date" />
+              </div>
+              <div class="field" style="min-width: 240px;">
+                <label for="filterCategory">Category</label>
+                <select class="input" id="filterCategory">
+                  <option value="">All categories</option>
+                  <option value="Employee Entry">Employee Entry</option>
+                  <option value="Visitor Access">Visitor Access</option>
+                </select>
+              </div>
+              <div class="field" style="min-width: 260px;">
+                <label for="filterSite">Site</label>
+                <select class="input" id="filterSite">
+                  <option value="">All sites</option>
+                </select>
+              </div>
+              <div style="display:flex; gap: 10px; flex-wrap: wrap; align-items: center;">
+                <button class="btn small" type="button" id="resetAccessFilters">Reset</button>
+                <span class="helper">Visible rows: <strong id="accessCount" style="color: var(--text);">0</strong></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="table-wrap" aria-label="Access logs table">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Log ID</th>
+                  <th>Category</th>
+                  <th>Person</th>
+                  <th>Site</th>
+                  <th>Date &amp; Time</th>
+                  <th>Outcome</th>
+                  <th>Method</th>
+                </tr>
+              </thead>
+              <tbody id="accessTbody"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- Service Requests -->
+      <section class="view" data-view="requests" aria-label="Service requests">
+        <div class="view-grid">
+          <div class="card">
+            <div class="kicker">Service Requests</div>
+            <h2 class="h2">Submit requests and track status changes.</h2>
+            <p class="p">Use service requests for operational changes such as additional guards, temporary surveillance, or risk reassessment planning.</p>
+          </div>
+
+          <div class="cards-2">
+            <div class="card">
+              <div class="kicker">New Request</div>
+              <h2 class="h2">Create a service request</h2>
+              <form id="requestForm" class="form-grid" style="margin-top: 12px;" novalidate>
+                <div class="field">
+                  <label for="reqType">Request Type</label>
+                  <select class="input" id="reqType" name="reqType" required>
+                    <option value="">Select a request type</option>
+                    <option value="Request additional guards">Request additional guards</option>
+                    <option value="Request temporary surveillance">Request temporary surveillance</option>
+                    <option value="Risk reassessment request">Risk reassessment request</option>
+                  </select>
+                  <div class="error" id="reqTypeError" hidden>Please select a request type.</div>
+                </div>
+
+                <div class="field">
+                  <label for="reqSite">Site</label>
+                  <select class="input" id="reqSite" name="reqSite" required>
+                    <option value="">Select a site</option>
+                  </select>
+                  <div class="error" id="reqSiteError" hidden>Please select a site.</div>
+                </div>
+
+                <div class="field">
+                  <label for="reqDetails">Request Details</label>
+                  <textarea class="input" id="reqDetails" name="reqDetails" rows="5" placeholder="Provide timing, scope, headcount (if applicable), and any operational constraints." required></textarea>
+                  <div class="helper">Include dates, shifts, or compliance constraints so we can respond quickly.</div>
+                  <div class="error" id="reqDetailsError" hidden>Please provide at least 20 characters of details.</div>
+                </div>
+
+                <div style="display:flex; gap: 10px; flex-wrap: wrap; align-items: center;">
+                  <button class="btn primary" type="submit">Submit Request</button>
+                  <span class="helper" id="requestStatus" role="status" aria-live="polite"></span>
+                </div>
+              </form>
+            </div>
+
+            <div class="card">
+              <div class="kicker">Status Tracking</div>
+              <h2 class="h2">Your active requests</h2>
+              <p class="p">Requests move through submission, review, scheduling, and completion with documented updates.</p>
+              <div class="view-grid" id="requestsList" style="margin-top: 12px;"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Compliance & Documents -->
+      <section class="view" data-view="compliance" aria-label="Compliance and documents">
+        <div class="view-grid">
+          <div class="card">
+            <div class="kicker">Compliance &amp; Documents</div>
+            <h2 class="h2">Audit-ready documentation with secure viewing and download controls.</h2>
+            <p class="p">Documents are presented with clear categories and timestamps to support governance and client assurance.</p>
+          </div>
+
+          <div class="view-grid" id="documentsList"></div>
+
+          <div class="card">
+            <div class="kicker">Compliance Notes</div>
+            <ul class="list">
+              <li>Compliance status is tracked alongside incident handling and documented remediation activities</li>
+              <li>Download actions should be restricted to authorized client contacts in production environments</li>
+              <li>Confidentiality obligations apply to access logs, incident reports, and surveillance documentation</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Profile & Settings -->
+      <section class="view" data-view="profile" aria-label="Profile and account settings">
+        <div class="view-grid">
+          <div class="card">
+            <div class="kicker">Profile &amp; Account Settings</div>
+            <h2 class="h2">Organization details and security preferences.</h2>
+            <p class="p">Manage authorized contacts, notification preferences, and password settings. This is a front-end demo of the UX.</p>
+          </div>
+
+          <div class="cards-2">
+            <div class="card">
+              <div class="kicker">Organization Profile</div>
+              <h2 class="h2">Primary account details</h2>
+              <form id="profileForm" class="form-grid" style="margin-top: 12px;" novalidate>
+                <div class="field">
+                  <label for="profileOrg">Organization</label>
+                  <input class="input" id="profileOrg" type="text" />
+                </div>
+                <div class="field">
+                  <label for="profileContact">Authorized Contact</label>
+                  <input class="input" id="profileContact" type="text" />
+                </div>
+                <div class="field">
+                  <label for="profileEmail">Email</label>
+                  <input class="input" id="profileEmail" type="email" />
+                </div>
+                <div class="field">
+                  <label for="profileRole">Role</label>
+                  <input class="input" id="profileRole" type="text" disabled />
+                  <div class="helper">Role changes require verification by Sentinel support teams.</div>
+                </div>
+
+                <div class="card soft" style="padding: 12px;">
+                  <div class="kicker">Notification Preferences</div>
+                  <label style="display:flex; gap: 10px; align-items: center; margin-top: 10px;">
+                    <input type="checkbox" checked />
+                    <span>Send high-priority alerts to email</span>
+                  </label>
+                  <label style="display:flex; gap: 10px; align-items: center; margin-top: 10px;">
+                    <input type="checkbox" checked />
+                    <span>Send weekly monitoring summaries</span>
+                  </label>
+                  <label style="display:flex; gap: 10px; align-items: center; margin-top: 10px;">
+                    <input type="checkbox" />
+                    <span>Notify for system maintenance windows</span>
+                  </label>
+                </div>
+
+                <div style="display:flex; gap: 10px; flex-wrap: wrap; align-items: center;">
+                  <button class="btn primary" type="submit">Save Profile</button>
+                  <span class="helper" id="profileStatus" role="status" aria-live="polite"></span>
+                </div>
+              </form>
+            </div>
+
+            <div class="card">
+              <div class="kicker">Password &amp; Security Settings</div>
+              <h2 class="h2">Update password (demo)</h2>
+              <form id="securityForm" class="form-grid" style="margin-top: 12px;" novalidate>
+                <div class="field">
+                  <label for="currentPassword">Current Password</label>
+                  <input class="input" id="currentPassword" name="currentPassword" type="password" />
+                  <div class="error" id="curPwError" hidden>Please enter your current password.</div>
+                </div>
+
+                <div class="field">
+                  <label for="newPassword">New Password</label>
+                  <input class="input" id="newPassword" name="newPassword" type="password" />
+                  <div class="helper">Use 8+ characters with numbers and symbols.</div>
+                  <div class="error" id="newPwError" hidden>Password must be at least 8 characters.</div>
+                </div>
+
+                <div class="field">
+                  <label for="confirmNewPassword">Confirm New Password</label>
+                  <input class="input" id="confirmNewPassword" name="confirmNewPassword" type="password" />
+                  <div class="error" id="newPwConfirmError" hidden>Passwords do not match.</div>
+                </div>
+
+                <div class="card soft" style="padding: 12px;">
+                  <div class="kicker">Security Reminder</div>
+                  <p class="p">For enterprise portals, Sentinel recommends multi-factor authentication and role-based access controls for all client users.</p>
+                </div>
+
+                <div style="display:flex; gap: 10px; flex-wrap: wrap; align-items: center;">
+                  <button class="btn primary" type="submit">Update Password</button>
+                  <span class="helper" id="securityStatus" role="status" aria-live="polite"></span>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="site-footer" style="margin-top: 18px;">
+        <div class="footer-bottom">
+          <div class="container">
+            © 2026 Sentinel Secure Services. All rights reserved. Unauthorized access is prohibited.
+          </div>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <!-- Document Viewer Modal -->
+  <div class="modal" id="docModal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Document viewer">
+    <div class="modal-panel">
+      <div class="modal-head">
+        <p class="modal-title" id="docModalTitle">Document</p>
+        <button class="btn small" type="button" data-modal-close>Close</button>
+      </div>
+      <div class="modal-body" id="docModalBody"></div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/dashboard.js"></script>
+  <script src="assets/js/chatbot.js"></script>
+</body>
+</html>
