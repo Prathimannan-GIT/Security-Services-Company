@@ -30,13 +30,28 @@
       <!-- Desktop Nav -->
       <nav class="nav" aria-label="Primary">
         <a data-nav href="index.html">Home</a>
+        <a data-nav href="home2.html">Home 2</a>
         <a data-nav href="about.html">About</a>
         <a data-nav href="services.html">Services</a>
+        <a data-nav href="dashboard.html">Dashboard</a>
+        <a data-nav href="#portfolio">Portfolio</a>
+        <a data-nav href="#contact">Contact</a>
       </nav>
 
       <!-- Desktop Actions -->
       <div class="nav-actions" aria-label="Primary actions">
-        <a class="btn small" href="#consultation">Request a Consultation</a>
+        <button class="theme-toggle" type="button" id="themeToggle" aria-label="Toggle theme">
+          <!-- Sun icon for light mode -->
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="sun-icon">
+            <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/>
+            <path d="M12 1v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <!-- Moon icon for dark mode -->
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="moon-icon" style="display: none;">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="2"/>
+          </svg>
+        </button>
+        <a class="btn small" href="register.html">Register</a>
         <a class="btn primary small" href="login.html">Client Login</a>
       </div>
 
@@ -56,11 +71,26 @@
     <div class="container mobile-panel" id="mobileMenu" data-mobile-panel>
       <nav class="nav" aria-label="Mobile">
         <a data-nav href="index.html">Home</a>
+        <a data-nav href="home2.html">Home 2</a>
         <a data-nav href="about.html">About</a>
         <a data-nav href="services.html">Services</a>
+        <a data-nav href="dashboard.html">Dashboard</a>
+        <a data-nav href="#portfolio">Portfolio</a>
+        <a data-nav href="#contact">Contact</a>
       </nav>
       <div class="nav-actions">
-        <a class="btn" href="#consultation">Request a Consultation</a>
+        <button class="theme-toggle" type="button" id="mobileThemeToggle" aria-label="Toggle theme">
+          <!-- Sun icon for light mode -->
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="sun-icon">
+            <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/>
+            <path d="M12 1v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <!-- Moon icon for dark mode -->
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="moon-icon" style="display: none;">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="2"/>
+          </svg>
+        </button>
+        <a class="btn" href="register.html">Register</a>
         <a class="btn primary" href="login.html">Client Login</a>
       </div>
     </div>
@@ -244,6 +274,129 @@
       </div>
     </section>
 
+    <!-- Portfolio Section -->
+    <section class="section" id="portfolio" aria-label="Portfolio">
+      <div class="container">
+        <div class="kicker">Portfolio</div>
+        <h2 class="h2">Our Success Stories & Case Studies</h2>
+        <div class="grid" style="grid-template-columns: repeat(3, 1fr); margin-top: 16px;">
+          <div class="card">
+            <div class="stat-icon" aria-hidden="true" style="margin-bottom: 12px;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <polyline points="9,22 9,12 15,12 15,22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <strong>Corporate Campus Security</strong>
+            <p class="p" style="margin-top: 8px;">Implemented comprehensive security system for 500+ employee corporate campus, reducing incidents by 45%.</p>
+          </div>
+          <div class="card">
+            <div class="stat-icon" aria-hidden="true" style="margin-bottom: 12px;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <strong>Industrial Facility Protection</strong>
+            <p class="p" style="margin-top: 8px;">Deployed advanced surveillance and access control for manufacturing facility covering 10 acres.</p>
+          </div>
+          <div class="card">
+            <div class="stat-icon" aria-hidden="true" style="margin-bottom: 12px;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <strong>Residential Community Safety</strong>
+            <p class="p" style="margin-top: 8px;">Provided 24/7 security monitoring for luxury residential community with 200+ households.</p>
+          </div>
+          <div class="card">
+            <div class="stat-icon" aria-hidden="true" style="margin-bottom: 12px;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <strong>Healthcare Security Solutions</strong>
+            <p class="p" style="margin-top: 8px;">Ensured patient safety and asset protection for major hospital with emergency response protocols.</p>
+          </div>
+          <div class="card">
+            <div class="stat-icon" aria-hidden="true" style="margin-bottom: 12px;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <strong>Educational Institution Safety</strong>
+            <p class="p" style="margin-top: 8px;">Implemented comprehensive security system for university campus with 15,000+ students.</p>
+          </div>
+          <div class="card">
+            <div class="stat-icon" aria-hidden="true" style="margin-bottom: 12px;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/>
+              </svg>
+            </div>
+            <strong>Retail Security Management</strong>
+            <p class="p" style="margin-top: 8px;">Delivered loss prevention and customer safety solutions for shopping mall with 100+ stores.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section compact" id="contact" aria-label="Contact">
+      <div class="container">
+        <div class="card">
+          <div class="kicker">Get In Touch</div>
+          <h2 class="h2">Contact Our Security Experts</h2>
+          <p class="p">Reach out to us for any security requirements, consultations, or emergency services.</p>
+          
+          <div class="grid" style="grid-template-columns: repeat(3, 1fr); margin-top: 24px;">
+            <div class="card" style="text-align: center;">
+              <div class="stat-icon" aria-hidden="true" style="margin: 0 auto 12px;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <strong>24/7 Operations Desk</strong>
+              <p class="p" style="margin-top: 8px;">+1 (555) 013-2040</p>
+              <p class="p">Available round the clock for emergencies</p>
+            </div>
+            
+            <div class="card" style="text-align: center;">
+              <div class="stat-icon" aria-hidden="true" style="margin: 0 auto 12px;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <strong>Email Support</strong>
+              <p class="p" style="margin-top: 8px;">ops@sentinelsecure.example</p>
+              <p class="p">Response within 2 business hours</p>
+            </div>
+            
+            <div class="card" style="text-align: center;">
+              <div class="stat-icon" aria-hidden="true" style="margin: 0 auto 12px;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/>
+                </svg>
+              </div>
+              <strong>Headquarters</strong>
+              <p class="p" style="margin-top: 8px;">123 Security Boulevard</p>
+              <p class="p">Metro City, MC 10001</p>
+            </div>
+          </div>
+          
+          <div style="margin-top: 24px; text-align: center;">
+            <a class="btn primary" href="#consultation">Schedule Consultation</a>
+            <a class="btn" href="mailto:ops@sentinelsecure.example">Send Email</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Consultation / Contact -->
     <section class="section" id="consultation" aria-label="Request a consultation">
       <div class="container">
@@ -366,6 +519,55 @@
   <script src="assets/js/main.js"></script>
   <script src="assets/js/chatbot.js"></script>
   <script>
+    // Theme switching functionality
+    (function () {
+      "use strict";
+
+      // Get theme from localStorage or default to dark
+      const savedTheme = localStorage.getItem('theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+
+      // Update theme toggle icons
+      function updateThemeIcons(theme) {
+        const sunIcons = document.querySelectorAll('.sun-icon');
+        const moonIcons = document.querySelectorAll('.moon-icon');
+        
+        if (theme === 'light') {
+          sunIcons.forEach(icon => icon.style.display = 'none');
+          moonIcons.forEach(icon => icon.style.display = 'block');
+        } else {
+          sunIcons.forEach(icon => icon.style.display = 'block');
+          moonIcons.forEach(icon => icon.style.display = 'none');
+        }
+      }
+
+      // Initialize icons
+      updateThemeIcons(savedTheme);
+
+      // Theme toggle handlers
+      function handleThemeToggle(e) {
+        e.preventDefault();
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateThemeIcons(newTheme);
+      }
+
+      // Attach event listeners
+      const desktopThemeToggle = document.getElementById('themeToggle');
+      const mobileThemeToggle = document.getElementById('mobileThemeToggle');
+      
+      if (desktopThemeToggle) {
+        desktopThemeToggle.addEventListener('click', handleThemeToggle);
+      }
+      
+      if (mobileThemeToggle) {
+        mobileThemeToggle.addEventListener('click', handleThemeToggle);
+      }
+    })();
+
     // Consultation form validation (front-end only)
     (function () {
       "use strict";

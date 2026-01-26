@@ -29,6 +29,26 @@
   --focus: 0 0 0 3px rgba(93, 214, 255, 0.24);
 }
 
+/* Light theme */
+[data-theme="light"] {
+  --bg: #f8fafc;
+  --surface: rgba(255, 255, 255, 0.95);
+  --surface-2: rgba(255, 255, 255, 0.8);
+  --border: rgba(59, 130, 246, 0.15);
+  --text: rgba(15, 23, 42, 1);
+  --muted: rgba(30, 41, 59, 0.9);
+  --muted-2: rgba(51, 65, 85, 0.8);
+  --brand: #3b82f6;
+  --brand-2: #8b5cf6;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+
+  --shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+  --focus: 0 0 0 3px rgba(59, 130, 246, 0.3);
+}
+
 /* Base reset */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -47,6 +67,16 @@ body {
     var(--bg);
   color: var(--text);
   line-height: 1.55;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+[data-theme="light"] body {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%),
+    radial-gradient(1200px 800px at 10% 0%, rgba(59, 130, 246, 0.15), transparent 60%),
+    radial-gradient(900px 650px at 100% 0%, rgba(139, 92, 246, 0.12), transparent 55%),
+    radial-gradient(1000px 900px at 50% 100%, rgba(16, 185, 129, 0.08), transparent 55%),
+    var(--bg);
+  background-attachment: fixed;
 }
 
 img {
@@ -88,20 +118,42 @@ button, input, select, textarea {
 }
 
 .h1 {
-  font-size: clamp(34px, 5vw, 54px);
+  font-size: clamp(36px, 5vw, 56px);
   line-height: 1.05;
   margin: 10px 0 14px;
+  font-weight: 800;
+}
+
+[data-theme="light"] .h1 {
+  font-size: clamp(38px, 5vw, 58px);
+  font-weight: 900;
+  color: var(--text);
 }
 
 .h2 {
-  font-size: clamp(24px, 3vw, 34px);
+  font-size: clamp(26px, 3vw, 36px);
   line-height: 1.15;
   margin: 0 0 14px;
+  font-weight: 700;
+}
+
+[data-theme="light"] .h2 {
+  font-size: clamp(28px, 3vw, 38px);
+  font-weight: 800;
+  color: var(--text);
 }
 
 .p {
   color: var(--muted);
   margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+[data-theme="light"] .p {
+  color: var(--muted);
+  font-size: 17px;
+  font-weight: 500;
 }
 
 .grid {
@@ -115,6 +167,19 @@ button, input, select, textarea {
   border-radius: var(--radius);
   padding: 18px;
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+}
+
+[data-theme="light"] .card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.85));
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1), 0 2px 10px rgba(0, 0, 0, 0.06);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+[data-theme="light"] .card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15), 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 .card.soft {
@@ -131,7 +196,15 @@ button, input, select, textarea {
   border: 1px solid var(--border);
   background: rgba(255, 255, 255, 0.05);
   color: var(--muted);
-  font-size: 13px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+[data-theme="light"] .badge {
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  color: var(--text);
+  font-weight: 700;
 }
 
 .badge .dot {
@@ -156,10 +229,25 @@ button, input, select, textarea {
   user-select: none;
 }
 
+[data-theme="light"] .btn {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  color: var(--text);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
 .btn:hover {
   transform: translateY(-1px);
   background: rgba(255, 255, 255, 0.1);
   border-color: rgba(255, 255, 255, 0.18);
+}
+
+[data-theme="light"] .btn:hover {
+  background: rgba(59, 130, 246, 0.1);
+  border-color: rgba(59, 130, 246, 0.3);
+  box-shadow: 0 4px 16px rgba(59, 130, 246, 0.2);
+  transform: translateY(-1px);
 }
 
 .btn:focus-visible {
@@ -172,6 +260,19 @@ button, input, select, textarea {
   background: linear-gradient(135deg, var(--brand), var(--brand-2));
   color: #08101c;
   font-weight: 800;
+}
+
+[data-theme="light"] .btn.primary {
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  color: white;
+  box-shadow: 0 4px 16px rgba(59, 130, 246, 0.3);
+  border: none;
+}
+
+[data-theme="light"] .btn.primary:hover {
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  box-shadow: 0 8px 24px rgba(59, 130, 246, 0.4);
+  transform: translateY(-2px);
 }
 
 .btn.primary:hover {
@@ -196,6 +297,13 @@ button, input, select, textarea {
   backdrop-filter: blur(14px);
   background: rgba(10, 15, 26, 0.65);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="light"] .site-header {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(59, 130, 246, 0.1);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
 }
 
 .header-inner {
@@ -225,8 +333,15 @@ button, input, select, textarea {
 }
 
 .brand-title strong {
-  font-size: 14px;
+  font-size: 16px;
   letter-spacing: 0.02em;
+  font-weight: 700;
+}
+
+[data-theme="light"] .brand-title strong {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--text);
 }
 
 .brand-title span {
@@ -243,10 +358,17 @@ button, input, select, textarea {
 .nav a {
   color: var(--muted);
   font-weight: 650;
-  font-size: 14px;
+  font-size: 15px;
   padding: 10px 12px;
   border-radius: 10px;
   transition: background 150ms ease, color 150ms ease;
+  white-space: nowrap;
+}
+
+[data-theme="light"] .nav a {
+  color: var(--text);
+  font-weight: 700;
+  font-size: 16px;
 }
 
 .nav a:hover {
@@ -254,15 +376,62 @@ button, input, select, textarea {
   color: var(--text);
 }
 
+[data-theme="light"] .nav a:hover {
+  background: rgba(59, 130, 246, 0.1);
+  color: var(--brand);
+}
+
 .nav a.active {
   color: var(--text);
   background: rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="light"] .nav a.active {
+  color: var(--brand);
+  background: rgba(59, 130, 246, 0.15);
 }
 
 .nav-actions {
   display: flex;
   align-items: center;
   gap: 10px;
+}
+
+/* Theme toggle button */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.06);
+  cursor: pointer;
+  transition: all 150ms ease;
+}
+
+.theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.theme-toggle:focus-visible {
+  outline: none;
+  box-shadow: var(--focus);
+}
+
+[data-theme="light"] .theme-toggle {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  color: var(--text);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .theme-toggle:hover {
+  background: rgba(59, 130, 246, 0.1);
+  border-color: rgba(59, 130, 246, 0.3);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
 }
 
 .mobile-toggle {
@@ -273,6 +442,13 @@ button, input, select, textarea {
   display: none;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   padding: 12px 0 16px;
+}
+
+[data-theme="light"] .mobile-panel {
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(59, 130, 246, 0.15);
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
 }
 
 .mobile-panel .nav {
@@ -348,14 +524,33 @@ button, input, select, textarea {
   border: 1px solid rgba(255, 255, 255, 0.10);
 }
 
+[data-theme="light"] .stat-icon {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1));
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  color: var(--brand);
+}
+
 .stat strong {
   display: block;
-  font-size: 14px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+[data-theme="light"] .stat strong {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--text);
 }
 
 .stat span {
   display: block;
-  font-size: 13px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+[data-theme="light"] .stat span {
+  font-size: 15px;
+  font-weight: 500;
   color: var(--muted);
 }
 
@@ -430,6 +625,21 @@ button, input, select, textarea {
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.12);
   background: rgba(0, 0, 0, 0.18);
+  transition: all 0.3s ease;
+}
+
+[data-theme="light"] .input {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(59, 130, 246, 0.2);
+  color: var(--text);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] .input:focus {
+  border-color: var(--brand);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+  background: rgba(255, 255, 255, 0.95);
 }
 
 .input:focus {
@@ -487,5 +697,52 @@ button, input, select, textarea {
 
   .section {
     padding: 56px 0;
+  }
+
+  /* Mobile theme toggle improvements */
+  .mobile-panel .theme-toggle {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+
+  .mobile-panel .theme-toggle span {
+    margin-left: 8px;
+  }
+
+  /* Ensure mobile nav items don't merge */
+  .mobile-panel .nav {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 10px;
+  }
+
+  .mobile-panel .nav a {
+    width: 100%;
+    padding: 12px;
+    text-align: center;
+    border-radius: 8px;
+    transition: background 150ms ease;
+  }
+
+  .mobile-panel .nav a:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  [data-theme="light"] .mobile-panel .nav a:hover {
+    background: rgba(0, 0, 0, 0.1);
+  }
+
+  /* Mobile buttons spacing */
+  .mobile-panel .nav-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .mobile-panel .nav-actions .btn {
+    width: 100%;
+    justify-content: center;
   }
 }
