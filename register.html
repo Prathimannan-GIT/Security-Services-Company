@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <!--
     Sentinel Secure Services
@@ -7,40 +8,18 @@
   -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Client Registration |  Secure Services</title>
-  <meta name="description" content="Create a secure client portal account for  Secure Services. Professional registration with password strength guidance." />
+  <title>Client Registration | Secure Services</title>
+  <meta name="description"
+    content="Create a secure client portal account for  Secure Services. Professional registration with password strength guidance." />
 
+  <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="stylesheet" href="assets/css/styles.css" />
   <link rel="stylesheet" href="assets/css/auth.css" />
 </head>
+
 <body>
   <!-- Site Header -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="index.html" aria-label=" Secure Services Home">
-        <img src="assets/img/logo.svg" alt=" Secure Services Logo" />
-        <span class="brand-title">
-          <strong> Secure Services</strong>
-          <span>Intelligence. Vigilance. Protection.</span>
-        </span>
-      </a>
-
-      
-
-      
-    </div>
-
-    <div class="container mobile-panel" id="mobileMenu" data-mobile-panel>
-      <nav class="nav" aria-label="Mobile">
-        <a data-nav href="index.html">Home</a>
-        <a data-nav href="about.html">About</a>
-        <a data-nav href="services.html">Services</a>
-        <a data-nav href="login.html">Login</a>
-        <a data-nav href="register.html">Register</a>
-      </nav>
-    </div>
-  </header>
-
+  <!-- Navbar removed per requirements -->
   <main class="auth-shell">
     <div class="auth-grid">
       <div class="auth-visual" aria-hidden="true">
@@ -50,14 +29,16 @@
       <section class="auth-panel" aria-label="Client registration">
         <span class="badge"><span class="dot" aria-hidden="true"></span> Client Portal Registration</span>
         <h1 class="auth-title">Create your client account</h1>
-        <p class="auth-subtitle">Register to access live monitoring, alerts, incident reporting, and compliance documents.</p>
+        <p class="auth-subtitle">Register to access live monitoring, alerts, incident reporting, and compliance
+          documents.</p>
 
         <form id="registerForm" class="form-grid" style="margin-top: 14px;" novalidate>
           <!-- Organization + Contact -->
           <div class="form-row">
             <div class="field">
               <label for="organization">Organization Name</label>
-              <input class="input" id="organization" name="organization" type="text" autocomplete="organization" required />
+              <input class="input" id="organization" name="organization" type="text" autocomplete="organization"
+                required />
               <div class="error" id="orgError" hidden>Please enter your organization name.</div>
             </div>
 
@@ -86,12 +67,13 @@
 
             <div class="field">
               <label for="confirmPassword">Confirm Password</label>
-              <input class="input" id="confirmPassword" name="confirmPassword" type="password" autocomplete="new-password" required />
+              <input class="input" id="confirmPassword" name="confirmPassword" type="password"
+                autocomplete="new-password" required />
               <div class="error" id="confirmError" hidden>Passwords do not match.</div>
             </div>
           </div>
 
-          
+
 
           <!-- Terms -->
           <div class="field">
@@ -109,65 +91,16 @@
             <span class="helper" id="registerStatus" role="status" aria-live="polite"></span>
           </div>
 
-          
+
         </form>
       </section>
     </div>
   </main>
 
-  
+
 
   <script src="assets/js/main.js"></script>
   <script src="assets/js/auth.js"></script>
-  <script>
-    // Theme switching functionality
-    (function () {
-      "use strict";
-
-      // Get theme from localStorage or default to dark
-      const savedTheme = localStorage.getItem('theme') || 'dark';
-      document.documentElement.setAttribute('data-theme', savedTheme);
-
-      // Update theme toggle icons
-      function updateThemeIcons(theme) {
-        const sunIcons = document.querySelectorAll('.sun-icon');
-        const moonIcons = document.querySelectorAll('.moon-icon');
-        
-        if (theme === 'light') {
-          sunIcons.forEach(icon => icon.style.display = 'none');
-          moonIcons.forEach(icon => icon.style.display = 'block');
-        } else {
-          sunIcons.forEach(icon => icon.style.display = 'block');
-          moonIcons.forEach(icon => icon.style.display = 'none');
-        }
-      }
-
-      // Initialize icons
-      updateThemeIcons(savedTheme);
-
-      // Theme toggle handlers
-      function handleThemeToggle(e) {
-        e.preventDefault();
-        const currentTheme = document.documentElement.getAttribute('data-theme');
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        
-        document.documentElement.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        updateThemeIcons(newTheme);
-      }
-
-      // Attach event listeners
-      const desktopThemeToggle = document.getElementById('themeToggle');
-      const mobileThemeToggle = document.getElementById('mobileThemeToggle');
-      
-      if (desktopThemeToggle) {
-        desktopThemeToggle.addEventListener('click', handleThemeToggle);
-      }
-      
-      if (mobileThemeToggle) {
-        mobileThemeToggle.addEventListener('click', handleThemeToggle);
-      }
-    })();
-  </script>
 </body>
+
 </html>

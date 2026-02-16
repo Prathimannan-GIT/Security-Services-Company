@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <!--
      Secure Services
@@ -9,23 +10,26 @@
   -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Client Dashboard |  Secure Services</title>
-  <meta name="description" content="Client dashboard for monitoring, alerts, incidents, access logs, service requests, and compliance documents." />
+  <title>Client Dashboard | Secure Services</title>
+  <meta name="description"
+    content="Client dashboard for monitoring, alerts, incidents, access logs, service requests, and compliance documents." />
 
+  <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="stylesheet" href="assets/css/styles.css" />
   <link rel="stylesheet" href="assets/css/dashboard.css" />
   <link rel="stylesheet" href="assets/css/chatbot.css" />
 </head>
+
 <body data-require-session>
   <div class="dash">
     <!-- Sidebar Navigation -->
     <aside class="sidebar" id="sidebar" aria-label="Dashboard navigation">
       <!-- Brand -->
-      <a class="brand" href="index.html" aria-label=" Secure Services Home">
-        <img src="assets/img/logo.svg" alt=" Secure Services Logo" />
-        <span class="brand-title">
-          <strong> Secure Services</strong>
-          <span>Client Portal</span>
+      <a class="brand-logo" href="index.html" aria-label="Secure Services Home">
+        <img src="assets/img/logo.svg" alt="Logo" />
+        <span class="brand-text">
+          <span class="brand-name">Secure Services</span>
+          <span class="brand-tagline">Client Portal</span>
         </span>
       </a>
 
@@ -42,71 +46,76 @@
       <nav class="nav-group" aria-label="Portal sections">
         <button class="nav-item active" type="button" data-route="overview">
           <svg class="nav-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M4 12H10V20H4V12Z" stroke="rgba(255,255,255,0.86)" stroke-width="2"/>
-            <path d="M14 4H20V20H14V4Z" stroke="rgba(255,255,255,0.86)" stroke-width="2"/>
-            <path d="M4 8H10" stroke="rgba(255,255,255,0.86)" stroke-width="2" stroke-linecap="round"/>
+            <path d="M4 12H10V20H4V12Z" stroke="rgba(255,255,255,0.86)" stroke-width="2" />
+            <path d="M14 4H20V20H14V4Z" stroke="rgba(255,255,255,0.86)" stroke-width="2" />
+            <path d="M4 8H10" stroke="rgba(255,255,255,0.86)" stroke-width="2" stroke-linecap="round" />
           </svg>
           Dashboard Overview
         </button>
 
         <button class="nav-item" type="button" data-route="monitoring">
           <svg class="nav-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M3 12C7 5 17 5 21 12C17 19 7 19 3 12Z" stroke="rgba(255,255,255,0.86)" stroke-width="2"/>
-            <path d="M12 15C13.7 15 15 13.7 15 12C15 10.3 13.7 9 12 9C10.3 9 9 10.3 9 12C9 13.7 10.3 15 12 15Z" stroke="rgba(255,255,255,0.86)" stroke-width="2"/>
+            <path d="M3 12C7 5 17 5 21 12C17 19 7 19 3 12Z" stroke="rgba(255,255,255,0.86)" stroke-width="2" />
+            <path d="M12 15C13.7 15 15 13.7 15 12C15 10.3 13.7 9 12 9C10.3 9 9 10.3 9 12C9 13.7 10.3 15 12 15Z"
+              stroke="rgba(255,255,255,0.86)" stroke-width="2" />
           </svg>
           Live Monitoring
         </button>
 
         <button class="nav-item" type="button" data-route="alerts">
           <svg class="nav-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M12 2C8 5 6 8 6 12C6 16 9 20 12 22C15 20 18 16 18 12C18 8 16 5 12 2Z" stroke="rgba(255,255,255,0.86)" stroke-width="2"/>
-            <path d="M12 8V13" stroke="rgba(255,255,255,0.86)" stroke-width="2" stroke-linecap="round"/>
-            <path d="M12 17H12.01" stroke="rgba(255,255,255,0.86)" stroke-width="3" stroke-linecap="round"/>
+            <path d="M12 2C8 5 6 8 6 12C6 16 9 20 12 22C15 20 18 16 18 12C18 8 16 5 12 2Z"
+              stroke="rgba(255,255,255,0.86)" stroke-width="2" />
+            <path d="M12 8V13" stroke="rgba(255,255,255,0.86)" stroke-width="2" stroke-linecap="round" />
+            <path d="M12 17H12.01" stroke="rgba(255,255,255,0.86)" stroke-width="3" stroke-linecap="round" />
           </svg>
           Alerts
         </button>
 
         <button class="nav-item" type="button" data-route="incidents">
           <svg class="nav-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M4 5H20" stroke="rgba(255,255,255,0.86)" stroke-width="2" stroke-linecap="round"/>
-            <path d="M4 12H20" stroke="rgba(255,255,255,0.86)" stroke-width="2" stroke-linecap="round"/>
-            <path d="M4 19H20" stroke="rgba(255,255,255,0.86)" stroke-width="2" stroke-linecap="round"/>
+            <path d="M4 5H20" stroke="rgba(255,255,255,0.86)" stroke-width="2" stroke-linecap="round" />
+            <path d="M4 12H20" stroke="rgba(255,255,255,0.86)" stroke-width="2" stroke-linecap="round" />
+            <path d="M4 19H20" stroke="rgba(255,255,255,0.86)" stroke-width="2" stroke-linecap="round" />
           </svg>
           Incident Reports
         </button>
 
         <button class="nav-item" type="button" data-route="access">
           <svg class="nav-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M8 11V7C8 4.8 9.8 3 12 3C14.2 3 16 4.8 16 7V11" stroke="rgba(255,255,255,0.86)" stroke-width="2" stroke-linecap="round"/>
-            <path d="M6 11H18V21H6V11Z" stroke="rgba(255,255,255,0.86)" stroke-width="2"/>
+            <path d="M8 11V7C8 4.8 9.8 3 12 3C14.2 3 16 4.8 16 7V11" stroke="rgba(255,255,255,0.86)" stroke-width="2"
+              stroke-linecap="round" />
+            <path d="M6 11H18V21H6V11Z" stroke="rgba(255,255,255,0.86)" stroke-width="2" />
           </svg>
           Access Logs
         </button>
 
         <button class="nav-item" type="button" data-route="requests">
           <svg class="nav-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M4 6H20" stroke="rgba(255,255,255,0.86)" stroke-width="2" stroke-linecap="round"/>
-            <path d="M4 12H20" stroke="rgba(255,255,255,0.86)" stroke-width="2" stroke-linecap="round"/>
-            <path d="M4 18H14" stroke="rgba(255,255,255,0.86)" stroke-width="2" stroke-linecap="round"/>
-            <path d="M17 18L20 21" stroke="rgba(255,255,255,0.86)" stroke-width="2" stroke-linecap="round"/>
+            <path d="M4 6H20" stroke="rgba(255,255,255,0.86)" stroke-width="2" stroke-linecap="round" />
+            <path d="M4 12H20" stroke="rgba(255,255,255,0.86)" stroke-width="2" stroke-linecap="round" />
+            <path d="M4 18H14" stroke="rgba(255,255,255,0.86)" stroke-width="2" stroke-linecap="round" />
+            <path d="M17 18L20 21" stroke="rgba(255,255,255,0.86)" stroke-width="2" stroke-linecap="round" />
           </svg>
           Service Requests
         </button>
 
         <button class="nav-item" type="button" data-route="compliance">
           <svg class="nav-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M6 2H14L18 6V22H6V2Z" stroke="rgba(255,255,255,0.86)" stroke-width="2" stroke-linejoin="round"/>
-            <path d="M14 2V6H18" stroke="rgba(255,255,255,0.86)" stroke-width="2" stroke-linejoin="round"/>
-            <path d="M8 12H16" stroke="rgba(255,255,255,0.86)" stroke-width="2" stroke-linecap="round"/>
-            <path d="M8 16H16" stroke="rgba(255,255,255,0.86)" stroke-width="2" stroke-linecap="round"/>
+            <path d="M6 2H14L18 6V22H6V2Z" stroke="rgba(255,255,255,0.86)" stroke-width="2" stroke-linejoin="round" />
+            <path d="M14 2V6H18" stroke="rgba(255,255,255,0.86)" stroke-width="2" stroke-linejoin="round" />
+            <path d="M8 12H16" stroke="rgba(255,255,255,0.86)" stroke-width="2" stroke-linecap="round" />
+            <path d="M8 16H16" stroke="rgba(255,255,255,0.86)" stroke-width="2" stroke-linecap="round" />
           </svg>
           Compliance
         </button>
 
         <button class="nav-item" type="button" data-route="profile">
           <svg class="nav-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M20 21C20 17.7 16.4 15 12 15C7.6 15 4 17.7 4 21" stroke="rgba(255,255,255,0.86)" stroke-width="2" stroke-linecap="round"/>
-            <path d="M12 12C14.2 12 16 10.2 16 8C16 5.8 14.2 4 12 4C9.8 4 8 5.8 8 8C8 10.2 9.8 12 12 12Z" stroke="rgba(255,255,255,0.86)" stroke-width="2"/>
+            <path d="M20 21C20 17.7 16.4 15 12 15C7.6 15 4 17.7 4 21" stroke="rgba(255,255,255,0.86)" stroke-width="2"
+              stroke-linecap="round" />
+            <path d="M12 12C14.2 12 16 10.2 16 8C16 5.8 14.2 4 12 4C9.8 4 8 5.8 8 8C8 10.2 9.8 12 12 12Z"
+              stroke="rgba(255,255,255,0.86)" stroke-width="2" />
           </svg>
           Profile
         </button>
@@ -114,15 +123,20 @@
 
       <!-- Sidebar footer actions -->
       <div class="sidebar-footer">
-        <button class="theme-toggle" type="button" id="themeToggle" aria-label="Toggle theme" style="width: 100%; margin-bottom: 10px;">
+        <button class="theme-toggle" type="button" id="themeToggle" aria-label="Toggle theme"
+          style="width: 100%; margin-bottom: 10px;">
           <!-- Sun icon for light mode -->
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="sun-icon">
-            <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/>
-            <path d="M12 1v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true" class="sun-icon">
+            <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2" />
+            <path
+              d="M12 1v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" />
           </svg>
           <!-- Moon icon for dark mode -->
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="moon-icon" style="display: none;">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="2"/>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true" class="moon-icon" style="display: none;">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="2" />
           </svg>
           <span style="margin-left: 8px;">Toggle Theme</span>
         </button>
@@ -135,8 +149,10 @@
     <main class="main" aria-label="Dashboard content">
       <div class="topbar">
         <div class="topbar-left">
-          <button class="btn small mobile-sidebar-toggle" id="sidebarToggle" type="button" aria-label="Open dashboard menu">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <button class="btn small mobile-sidebar-toggle" id="sidebarToggle" type="button"
+            aria-label="Open dashboard menu">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true">
               <path d="M4 7H20" stroke="rgba(255,255,255,0.86)" stroke-width="2" stroke-linecap="round" />
               <path d="M4 12H20" stroke="rgba(255,255,255,0.86)" stroke-width="2" stroke-linecap="round" />
               <path d="M4 17H20" stroke="rgba(255,255,255,0.86)" stroke-width="2" stroke-linecap="round" />
@@ -201,7 +217,8 @@
             <div class="card">
               <div class="kicker">Security posture reminders</div>
               <h2 class="h2">Operational discipline reduces risk.</h2>
-              <p class="p">For best outcomes, align access governance, incident reporting, and monitoring thresholds with your current risk environment.</p>
+              <p class="p">For best outcomes, align access governance, incident reporting, and monitoring thresholds
+                with your current risk environment.</p>
               <ul class="list">
                 <li>Maintain accurate authorized contacts and escalation approvals</li>
                 <li>Review incident trends monthly for corrective actions</li>
@@ -219,7 +236,8 @@
           <div class="card">
             <div class="kicker">Client Site Monitoring</div>
             <h2 class="h2">Live site status with accountability and clear escalation readiness.</h2>
-            <p class="p">Status colors indicate operational posture. Red items require immediate attention or active remediation.</p>
+            <p class="p">Status colors indicate operational posture. Red items require immediate attention or active
+              remediation.</p>
           </div>
           <div class="cards-3" id="monitoringGrid"></div>
         </div>
@@ -231,7 +249,8 @@
           <div class="card">
             <div class="kicker">Alert Center</div>
             <h2 class="h2">Prioritized alerts with clear triage details.</h2>
-            <p class="p">Alerts are categorized and tagged by priority to support quick decision-making and rapid escalation.</p>
+            <p class="p">Alerts are categorized and tagged by priority to support quick decision-making and rapid
+              escalation.</p>
           </div>
           <div class="view-grid" id="alertsList"></div>
         </div>
@@ -243,7 +262,8 @@
           <div class="card">
             <div class="kicker">Incident Reports &amp; Analytics</div>
             <h2 class="h2">Incident history timeline with severity and report downloads.</h2>
-            <p class="p">Each incident includes structured notes and actions taken to support audit readiness and measurable remediation.</p>
+            <p class="p">Each incident includes structured notes and actions taken to support audit readiness and
+              measurable remediation.</p>
           </div>
           <div class="timeline" id="incidentTimeline"></div>
         </div>
@@ -255,7 +275,8 @@
           <div class="card">
             <div class="kicker">Access Control Logs</div>
             <h2 class="h2">Employee entry logs and visitor access records.</h2>
-            <p class="p">Use filters to narrow down records without UI overflow. This table is designed for secure readability on desktop and mobile.</p>
+            <p class="p">Use filters to narrow down records without UI overflow. This table is designed for secure
+              readability on desktop and mobile.</p>
           </div>
 
           <div class="card">
@@ -284,7 +305,8 @@
               </div>
               <div style="display:flex; gap: 10px; flex-wrap: wrap; align-items: center;">
                 <button class="btn small" type="button" id="resetAccessFilters">Reset</button>
-                <span class="helper">Visible rows: <strong id="accessCount" style="color: var(--text);">0</strong></span>
+                <span class="helper">Visible rows: <strong id="accessCount"
+                    style="color: var(--text);">0</strong></span>
               </div>
             </div>
           </div>
@@ -314,7 +336,8 @@
           <div class="card">
             <div class="kicker">Service Requests</div>
             <h2 class="h2">Submit requests and track status changes.</h2>
-            <p class="p">Use service requests for operational changes such as additional guards, temporary surveillance, or risk reassessment planning.</p>
+            <p class="p">Use service requests for operational changes such as additional guards, temporary surveillance,
+              or risk reassessment planning.</p>
           </div>
 
           <div class="cards-2">
@@ -343,7 +366,9 @@
 
                 <div class="field">
                   <label for="reqDetails">Request Details</label>
-                  <textarea class="input" id="reqDetails" name="reqDetails" rows="5" placeholder="Provide timing, scope, headcount (if applicable), and any operational constraints." required></textarea>
+                  <textarea class="input" id="reqDetails" name="reqDetails" rows="5"
+                    placeholder="Provide timing, scope, headcount (if applicable), and any operational constraints."
+                    required></textarea>
                   <div class="helper">Include dates, shifts, or compliance constraints so we can respond quickly.</div>
                   <div class="error" id="reqDetailsError" hidden>Please provide at least 20 characters of details.</div>
                 </div>
@@ -358,7 +383,8 @@
             <div class="card">
               <div class="kicker">Status Tracking</div>
               <h2 class="h2">Your active requests</h2>
-              <p class="p">Requests move through submission, review, scheduling, and completion with documented updates.</p>
+              <p class="p">Requests move through submission, review, scheduling, and completion with documented updates.
+              </p>
               <div class="view-grid" id="requestsList" style="margin-top: 12px;"></div>
             </div>
           </div>
@@ -371,7 +397,8 @@
           <div class="card">
             <div class="kicker">Compliance &amp; Documents</div>
             <h2 class="h2">Audit-ready documentation with secure viewing and download controls.</h2>
-            <p class="p">Documents are presented with clear categories and timestamps to support governance and client assurance.</p>
+            <p class="p">Documents are presented with clear categories and timestamps to support governance and client
+              assurance.</p>
           </div>
 
           <div class="view-grid" id="documentsList"></div>
@@ -381,7 +408,8 @@
             <ul class="list">
               <li>Compliance status is tracked alongside incident handling and documented remediation activities</li>
               <li>Download actions should be restricted to authorized client contacts in production environments</li>
-              <li>Confidentiality obligations apply to access logs, incident reports, and surveillance documentation</li>
+              <li>Confidentiality obligations apply to access logs, incident reports, and surveillance documentation
+              </li>
             </ul>
           </div>
         </div>
@@ -393,7 +421,8 @@
           <div class="card">
             <div class="kicker">Profile &amp; Account Settings</div>
             <h2 class="h2">Organization details and security preferences.</h2>
-            <p class="p">Manage authorized contacts, notification preferences, and password settings. This is a front-end demo of the UX.</p>
+            <p class="p">Manage authorized contacts, notification preferences, and password settings. This is a
+              front-end demo of the UX.</p>
           </div>
 
           <div class="cards-2">
@@ -467,7 +496,8 @@
 
                 <div class="card soft" style="padding: 12px;">
                   <div class="kicker">Security Reminder</div>
-                  <p class="p">For enterprise portals, Sentinel recommends multi-factor authentication and role-based access controls for all client users.</p>
+                  <p class="p">For enterprise portals, Sentinel recommends multi-factor authentication and role-based
+                    access controls for all client users.</p>
                 </div>
 
                 <div style="display:flex; gap: 10px; flex-wrap: wrap; align-items: center;">
@@ -503,52 +533,10 @@
   </div>
 
   <!-- Scripts -->
+  <script src="assets/js/main.js"></script>
   <script src="assets/js/auth.js"></script>
   <script src="assets/js/dashboard.js"></script>
   <script src="assets/js/chatbot.js"></script>
-  <script>
-    // Theme switching functionality
-    (function () {
-      "use strict";
-
-      // Get theme from localStorage or default to dark
-      const savedTheme = localStorage.getItem('theme') || 'dark';
-      document.documentElement.setAttribute('data-theme', savedTheme);
-
-      // Update theme toggle icons
-      function updateThemeIcons(theme) {
-        const sunIcons = document.querySelectorAll('.sun-icon');
-        const moonIcons = document.querySelectorAll('.moon-icon');
-        
-        if (theme === 'light') {
-          sunIcons.forEach(icon => icon.style.display = 'none');
-          moonIcons.forEach(icon => icon.style.display = 'block');
-        } else {
-          sunIcons.forEach(icon => icon.style.display = 'block');
-          moonIcons.forEach(icon => icon.style.display = 'none');
-        }
-      }
-
-      // Initialize icons
-      updateThemeIcons(savedTheme);
-
-      // Theme toggle handlers
-      function handleThemeToggle(e) {
-        e.preventDefault();
-        const currentTheme = document.documentElement.getAttribute('data-theme');
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        
-        document.documentElement.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        updateThemeIcons(newTheme);
-      }
-
-      // Attach event listener
-      const themeToggle = document.getElementById('themeToggle');
-      if (themeToggle) {
-        themeToggle.addEventListener('click', handleThemeToggle);
-      }
-    })();
-  </script>
 </body>
+
 </html>

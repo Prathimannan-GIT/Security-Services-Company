@@ -9,6 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Secure Services | Intelligence. Vigilance. Protection.</title>
   <meta name="description" content="Enterprise-grade security services: 24/7 monitoring, rapid response, trained personnel, and compliance-driven security programs." />
+  <link rel="icon" type="image/png" href="assets/favicon.png">
 
   <!-- Global styles -->
   <link rel="stylesheet" href="assets/css/styles.css" />
@@ -19,11 +20,11 @@
   <header class="site-header">
     <div class="container header-inner">
       <!-- Brand -->
-      <a class="brand" href="index.html" aria-label="Sentinel Secure Services Home">
-        <img src="assets/img/logo.svg" alt="Sentinel Secure Services Logo" />
-        <span class="brand-title">
-          <strong> Secure Services</strong>
-          <span>Intelligence. Vigilance. Protection.</span>
+      <a class="brand-logo" href="index.html" aria-label="Sentinel Secure Services Home">
+        <img src="assets/img/logo.svg" alt="Logo" />
+        <span class="brand-text">
+          <span class="brand-name">Secure Services</span>
+          <span class="brand-tagline">Intelligence. Vigilance. Protection.</span>
         </span>
       </a>
 
@@ -525,55 +526,6 @@
   <script src="assets/js/main.js"></script>
   <script src="assets/js/chatbot.js"></script>
   <script>
-    // Theme switching functionality
-    (function () {
-      "use strict";
-
-      // Get theme from localStorage or default to dark
-      const savedTheme = localStorage.getItem('theme') || 'dark';
-      document.documentElement.setAttribute('data-theme', savedTheme);
-
-      // Update theme toggle icons
-      function updateThemeIcons(theme) {
-        const sunIcons = document.querySelectorAll('.sun-icon');
-        const moonIcons = document.querySelectorAll('.moon-icon');
-        
-        if (theme === 'light') {
-          sunIcons.forEach(icon => icon.style.display = 'none');
-          moonIcons.forEach(icon => icon.style.display = 'block');
-        } else {
-          sunIcons.forEach(icon => icon.style.display = 'block');
-          moonIcons.forEach(icon => icon.style.display = 'none');
-        }
-      }
-
-      // Initialize icons
-      updateThemeIcons(savedTheme);
-
-      // Theme toggle handlers
-      function handleThemeToggle(e) {
-        e.preventDefault();
-        const currentTheme = document.documentElement.getAttribute('data-theme');
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        
-        document.documentElement.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        updateThemeIcons(newTheme);
-      }
-
-      // Attach event listeners
-      const desktopThemeToggle = document.getElementById('themeToggle');
-      const mobileThemeToggle = document.getElementById('mobileThemeToggle');
-      
-      if (desktopThemeToggle) {
-        desktopThemeToggle.addEventListener('click', handleThemeToggle);
-      }
-      
-      if (mobileThemeToggle) {
-        mobileThemeToggle.addEventListener('click', handleThemeToggle);
-      }
-    })();
-
     // Consultation form validation (front-end only)
     (function () {
       "use strict";
