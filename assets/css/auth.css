@@ -40,18 +40,27 @@
   box-shadow: var(--shadow);
 }
 
+.auth-panel .brand-logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
 .auth-title {
+  text-align: center;
   margin: 10px 0 4px;
   font-size: 28px;
   line-height: 1.15;
 }
 
 .auth-subtitle {
+  text-align: center;
   margin: 0 0 14px;
   color: var(--muted);
 }
 
 .auth-note {
+  text-align: center;
   margin-top: 12px;
   padding: 12px 12px;
   border-radius: 12px;

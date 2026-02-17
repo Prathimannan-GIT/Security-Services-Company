@@ -12,6 +12,7 @@
   <meta name="description"
     content="Create a secure client portal account for  Secure Services. Professional registration with password strength guidance." />
 
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="stylesheet" href="assets/css/styles.css" />
   <link rel="stylesheet" href="assets/css/auth.css" />
@@ -27,7 +28,13 @@
       </div>
 
       <section class="auth-panel" aria-label="Client registration">
-        <span class="badge"><span class="dot" aria-hidden="true"></span> Client Portal Registration</span>
+        <a class="brand-logo" href="index.html" aria-label="Secure Services Home">
+          <img src="assets/img/logo.svg" alt="Logo" />
+          <span class="brand-text">
+            <span class="brand-name">Secure Services</span>
+            <span class="brand-tagline">Intelligence. Vigilance</span>
+          </span>
+        </a>
         <h1 class="auth-title">Create your client account</h1>
         <p class="auth-subtitle">Register to access live monitoring, alerts, incident reporting, and compliance
           documents.</p>
@@ -57,23 +64,20 @@
           </div>
 
           <!-- Password -->
-          <div class="form-row">
-            <div class="field">
-              <label for="password">Password</label>
-              <input class="input" id="password" name="password" type="password" autocomplete="new-password" required />
-              <div class="helper">Use 8+ characters with a mix of letters, numbers, and symbols.</div>
-              <div class="error" id="pwError" hidden>Password must be at least 8 characters.</div>
-            </div>
-
-            <div class="field">
-              <label for="confirmPassword">Confirm Password</label>
-              <input class="input" id="confirmPassword" name="confirmPassword" type="password"
-                autocomplete="new-password" required />
-              <div class="error" id="confirmError" hidden>Passwords do not match.</div>
-            </div>
+          <div class="field">
+            <label for="password">Password</label>
+            <input class="input" id="password" name="password" type="password" autocomplete="new-password" required />
+            <div class="helper">Use 8+ characters with a mix of letters, numbers, and symbols.</div>
+            <div class="error" id="pwError" hidden>Password must be at least 8 characters.</div>
           </div>
 
-
+          <!-- Confirm Password -->
+          <div class="field">
+            <label for="confirmPassword">Confirm Password</label>
+            <input class="input" id="confirmPassword" name="confirmPassword" type="password"
+              autocomplete="new-password" required />
+            <div class="error" id="confirmError" hidden>Passwords do not match.</div>
+          </div>
 
           <!-- Terms -->
           <div class="field">
