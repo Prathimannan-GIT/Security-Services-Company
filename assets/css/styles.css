@@ -580,6 +580,7 @@ textarea {
 }
 
 .mobile-panel .nav {
+  display: flex;
   flex-direction: column;
   align-items: stretch;
   gap: 6px;
@@ -912,8 +913,8 @@ select.input {
   }
 }
 
-/* Tablet & Small Desktop (1024px) */
-@media (max-width: 1024px) {
+/* Tablet & Small Desktop (1024px) - Modified to show menu at 1024px */
+@media (max-width: 1023px) {
 
   .nav,
   .nav-actions {

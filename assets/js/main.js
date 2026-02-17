@@ -117,36 +117,10 @@
     }
   }
 
-  function initPasswordValidation() {
-    const form = document.getElementById('registerForm');
-    if (!form) return;
-
-    const password = document.getElementById('password');
-    const confirmPassword = document.getElementById('confirmPassword');
-    const errorMsg = document.getElementById('confirmError');
-
-    if (!password || !confirmPassword) return;
-
-    form.addEventListener('submit', function (e) {
-      if (password.value !== confirmPassword.value) {
-        e.preventDefault();
-        if (errorMsg) {
-          errorMsg.textContent = 'Passwords do not match';
-          errorMsg.hidden = false;
-        }
-        confirmPassword.classList.add('error-input');
-      } else {
-        if (errorMsg) errorMsg.hidden = true;
-        confirmPassword.classList.remove('error-input');
-      }
-    });
-  }
-
   document.addEventListener("DOMContentLoaded", function () {
     initTheme();
     ensureChatbotAssets();
     setActiveNavLink();
     initMobileNav();
-    initPasswordValidation();
   });
 })();
