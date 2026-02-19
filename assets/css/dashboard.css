@@ -191,18 +191,34 @@
   background: var(--brand);
 }
 
-.tag.green .pill { background: var(--success); }
-.tag.amber .pill { background: var(--warning); }
-.tag.red .pill { background: var(--danger); }
+.tag.green .pill {
+  background: var(--success);
+}
+
+.tag.amber .pill {
+  background: var(--warning);
+}
+
+.tag.red .pill {
+  background: var(--danger);
+}
 
 .priority {
   font-weight: 900;
   color: rgba(255, 255, 255, 0.92);
 }
 
-.priority.high { color: rgba(255, 77, 109, 0.95); }
-.priority.medium { color: rgba(255, 192, 77, 0.95); }
-.priority.low { color: rgba(47, 227, 156, 0.95); }
+.priority.high {
+  color: rgba(255, 77, 109, 0.95);
+}
+
+.priority.medium {
+  color: rgba(255, 192, 77, 0.95);
+}
+
+.priority.low {
+  color: rgba(47, 227, 156, 0.95);
+}
 
 /* Cards */
 .cards-3 {
@@ -307,7 +323,8 @@
   border-collapse: collapse;
 }
 
-.table th, .table td {
+.table th,
+.table td {
   padding: 12px 12px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   text-align: left;
@@ -433,141 +450,7 @@ body[data-require-session] .card .list li {
   line-height: 1.5;
 }
 
-/* Light theme styles for dashboard */
-[data-theme="light"] .sidebar {
-  background: rgba(255, 255, 255, 0.95);
-  border-right: 1px solid rgba(59, 130, 246, 0.1);
-  box-shadow: 2px 0 20px rgba(0, 0, 0, 0.08);
-}
 
-[data-theme="light"] .nav-item {
-  color: var(--muted);
-}
-
-[data-theme="light"] .nav-item:hover {
-  background: rgba(59, 130, 246, 0.08);
-  color: var(--text);
-}
-
-[data-theme="light"] .nav-item.active {
-  background: rgba(59, 130, 246, 0.12);
-  border-color: rgba(59, 130, 246, 0.2);
-  color: var(--text);
-}
-
-[data-theme="light"] .nav-icon {
-  opacity: 0.8;
-}
-
-[data-theme="light"] .profile-card {
-  background: rgba(249, 250, 251, 0.8);
-  border: 1px solid rgba(59, 130, 246, 0.1);
-}
-
-[data-theme="light"] .profile-name {
-  color: var(--text);
-}
-
-[data-theme="light"] .page-title {
-  color: var(--text);
-}
-
-[data-theme="light"] .kpi {
-  background: rgba(255, 255, 255, 0.9);
-  border: 1px solid rgba(59, 130, 246, 0.1);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-
-[data-theme="light"] .kpi strong {
-  color: var(--text);
-}
-
-[data-theme="light"] .kpi span {
-  color: var(--muted);
-}
-
-[data-theme="light"] .tag {
-  background: rgba(249, 250, 251, 0.9);
-  border-color: rgba(59, 130, 246, 0.15);
-  color: var(--muted);
-}
-
-[data-theme="light"] .priority {
-  color: var(--text);
-}
-
-[data-theme="light"] .site-card {
-  background: rgba(255, 255, 255, 0.9);
-  border: 1px solid rgba(59, 130, 246, 0.1);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-
-[data-theme="light"] .site-title {
-  color: var(--text);
-}
-
-[data-theme="light"] .site-meta {
-  color: var(--muted);
-}
-
-[data-theme="light"] .site-details {
-  color: var(--muted);
-}
-
-[data-theme="light"] .timeline-item {
-  background: rgba(255, 255, 255, 0.9);
-  border: 1px solid rgba(59, 130, 246, 0.1);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-
-[data-theme="light"] .timeline-title {
-  color: var(--text);
-}
-
-[data-theme="light"] .timeline-meta {
-  color: var(--muted);
-}
-
-[data-theme="light"] .table-wrap {
-  background: rgba(255, 255, 255, 0.9);
-  border-color: rgba(59, 130, 246, 0.1);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-
-[data-theme="light"] .table th {
-  background: rgba(59, 130, 246, 0.05);
-  color: var(--text);
-}
-
-[data-theme="light"] .table td {
-  color: var(--muted);
-}
-
-[data-theme="light"] .modal-panel {
-  background: rgba(255, 255, 255, 0.95);
-  border-color: rgba(59, 130, 246, 0.1);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-}
-
-[data-theme="light"] .modal-title {
-  color: var(--text);
-}
-
-[data-theme="light"] .modal-head {
-  border-bottom-color: rgba(59, 130, 246, 0.1);
-}
-
-[data-theme="light"] .viewer {
-  background: rgba(249, 250, 251, 0.9);
-  border-color: rgba(59, 130, 246, 0.1);
-  color: var(--muted);
-}
-
-[data-theme="light"] .mobile-sidebar-toggle {
-  background: rgba(255, 255, 255, 0.9);
-  border-color: rgba(59, 130, 246, 0.2);
-  color: var(--text);
-}
 
 /* Responsive */
 @media (max-width: 1060px) {

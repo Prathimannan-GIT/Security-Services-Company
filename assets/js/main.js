@@ -76,45 +76,8 @@
 
 
   function initTheme() {
-    // Check for saved theme preference, otherwise use system preference
-    let savedTheme = localStorage.getItem('theme');
-
-    if (!savedTheme) {
-      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        savedTheme = 'dark';
-      } else {
-        savedTheme = 'light';
-      }
-    }
-
-    document.documentElement.setAttribute('data-theme', savedTheme);
-    updateThemeIcons(savedTheme);
-
-    const toggles = document.querySelectorAll('#themeToggle, #mobileThemeToggle');
-    toggles.forEach(toggle => {
-      toggle.addEventListener('click', function (e) {
-        e.preventDefault();
-        const currentTheme = document.documentElement.getAttribute('data-theme');
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-
-        document.documentElement.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        updateThemeIcons(newTheme);
-      });
-    });
-  }
-
-  function updateThemeIcons(theme) {
-    const sunIcons = document.querySelectorAll('.sun-icon');
-    const moonIcons = document.querySelectorAll('.moon-icon');
-
-    if (theme === 'light') {
-      sunIcons.forEach(icon => icon.style.display = 'none');
-      moonIcons.forEach(icon => icon.style.display = 'block');
-    } else {
-      sunIcons.forEach(icon => icon.style.display = 'block');
-      moonIcons.forEach(icon => icon.style.display = 'none');
-    }
+    document.documentElement.setAttribute('data-theme', 'dark');
+    localStorage.setItem('theme', 'dark');
   }
 
   document.addEventListener("DOMContentLoaded", function () {
