@@ -820,21 +820,236 @@ select.input {
   }
 }
 
+/* Light theme styles */
+[data-theme="light"] {
+  --bg: #f8fafc;
+  --surface: rgba(255, 255, 255, 0.8);
+  --surface-2: rgba(255, 255, 255, 0.9);
+  --border: rgba(0, 0, 0, 0.1);
+  --text: rgba(15, 23, 42, 0.92);
+  --muted: rgba(15, 23, 42, 0.7);
+  --muted-2: rgba(15, 23, 42, 0.5);
+  --brand: #0ea5e9;
+  --brand-2: #6366f1;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+
+  --focus: 0 0 0 3px rgba(14, 165, 233, 0.24);
+}
+
+[data-theme="light"] body {
+  background: var(--bg);
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+[data-theme="light"] .site-header {
+  background: rgba(255, 255, 255, 0.95);
+  border-bottom: 1px solid var(--border);
+}
+
+[data-theme="light"] .card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+[data-theme="light"] .btn {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+[data-theme="light"] .btn:hover {
+  background: var(--surface-2);
+  border-color: var(--border);
+}
+
+[data-theme="light"] .btn.primary {
+  background: linear-gradient(135deg, var(--brand), var(--brand-2));
+  color: white;
+}
+
+[data-theme="light"] .theme-toggle {
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+
+[data-theme="light"] .theme-toggle:hover {
+  background: var(--surface-2);
+  border-color: var(--border);
+}
+
+[data-theme="light"] .nav a {
+  color: var(--muted);
+}
+
+[data-theme="light"] .nav a:hover,
+[data-theme="light"] .nav a.active {
+  background: var(--surface);
+  color: var(--text);
+}
+
+[data-theme="light"] .mobile-panel.open {
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+}
+
+[data-theme="light"] .site-footer {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+}
+
+[data-theme="light"] .footer-links a {
+  color: var(--muted);
+}
+
+[data-theme="light"] .footer-links a:hover {
+  color: var(--text);
+}
+
+[data-theme="light"] .badge {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--muted);
+}
+
+[data-theme="light"] .stat-icon {
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+
 /* Small Mobile (360px) */
 @media (max-width: 360px) {
   .container {
-    padding-inline: 16px;
+    padding-inline: 12px;
   }
 
   .h1 {
-    font-size: 28px;
+    font-size: 24px;
   }
 
   .h2 {
-    font-size: 22px;
+    font-size: 20px;
   }
 
   .brand-logo .brand-name {
     font-size: 1rem;
+  }
+
+  /* Fix GET IN TOUCH section - single column layout */
+  .section .grid[style*="grid-template-columns: repeat(3, 1fr)"],
+  .section .grid[style*="grid-template-columns: repeat(4, 1fr)"] {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  /* Fix CONTACT OPERATIONS section */
+  .section .grid[style*="grid-template-columns: repeat(2, 1fr)"] {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  /* Fix PHYSICAL SECURITY SERVICES cards */
+  .section[aria-label*="Physical security"] .grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  /* Fix VISION card layout in about page */
+  .section .container[style*="grid-template-columns: 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  /* General card padding reduction for small screens */
+  .card {
+    padding: 14px;
+  }
+
+  /* Reduce font sizes in cards */
+  .stat strong {
+    font-size: 14px;
+  }
+
+  .stat span {
+    font-size: 13px;
+  }
+
+  /* Fix hero grid layouts */
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  /* Fix form layouts */
+  .form-row {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  /* Fix footer grid */
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  /* Reduce button sizes */
+  .btn {
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+
+  .btn.small {
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+
+  /* Reduce badge sizes */
+  .badge {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  /* Fix stat icons */
+  .stat-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .stat {
+    gap: 10px;
+  }
+
+  /* Ensure no horizontal overflow */
+  * {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Fix any remaining grid layouts */
+  .grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  /* Specific fixes for contact sections */
+  .section[id="contact"] .grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  /* Fix hero actions */
+  .hero-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    justify-content: center;
   }
 }

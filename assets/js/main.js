@@ -75,9 +75,40 @@
   }
 
 
+  function updateThemeIcons(theme) {
+    const sunIcons = document.querySelectorAll('.sun-icon');
+    const moonIcons = document.querySelectorAll('.moon-icon');
+    
+    if (theme === 'light') {
+      sunIcons.forEach(icon => icon.style.display = 'none');
+      moonIcons.forEach(icon => icon.style.display = 'block');
+    } else {
+      sunIcons.forEach(icon => icon.style.display = 'block');
+      moonIcons.forEach(icon => icon.style.display = 'none');
+    }
+  }
+
   function initTheme() {
-    document.documentElement.setAttribute('data-theme', 'dark');
-    localStorage.setItem('theme', 'dark');
+    // Get saved theme or default to dark
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    updateThemeIcons(savedTheme);
+    
+    // Add click handlers to theme toggle buttons
+    const themeToggle = document.getElementById('themeToggle');
+    const mobileThemeToggle = document.getElementById('mobileThemeToggle');
+    
+    function toggleTheme() {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      updateThemeIcons(newTheme);
+    }
+    
+    if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
+    if (mobileThemeToggle) mobileThemeToggle.addEventListener('click', toggleTheme);
   }
 
   document.addEventListener("DOMContentLoaded", function () {
