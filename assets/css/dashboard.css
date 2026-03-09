@@ -452,6 +452,201 @@ body[data-require-session] .card .list li {
 
 
 
+/* Light theme styles for dashboard */
+[data-theme="light"] .sidebar {
+  background: rgba(255, 255, 255, 0.95);
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .sidebar-title {
+  color: var(--muted);
+}
+
+[data-theme="light"] .profile-card {
+  background: rgba(248, 250, 252, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .profile-name {
+  color: var(--text);
+}
+
+[data-theme="light"] .profile-meta {
+  color: var(--muted);
+}
+
+[data-theme="light"] .nav-item {
+  color: var(--muted);
+  border: 1px solid transparent;
+}
+
+[data-theme="light"] .nav-item:hover {
+  background: rgba(0, 0, 0, 0.05);
+  color: var(--text);
+}
+
+[data-theme="light"] .nav-item.active {
+  background: rgba(14, 165, 233, 0.1);
+  border-color: rgba(14, 165, 233, 0.2);
+  color: var(--text);
+}
+
+[data-theme="light"] .mobile-sidebar-toggle {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+[data-theme="light"] .page-title {
+  color: var(--text);
+}
+
+[data-theme="light"] .page-subtitle {
+  color: var(--muted);
+}
+
+[data-theme="light"] .kpi {
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+
+[data-theme="light"] .kpi strong {
+  color: var(--text);
+}
+
+[data-theme="light"] .kpi span {
+  color: var(--muted);
+}
+
+[data-theme="light"] .tag {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--muted);
+}
+
+[data-theme="light"] .priority {
+  color: var(--text);
+}
+
+[data-theme="light"] .site-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+
+[data-theme="light"] .site-title {
+  color: var(--text);
+}
+
+[data-theme="light"] .site-meta {
+  color: var(--muted);
+}
+
+[data-theme="light"] .site-details {
+  color: var(--muted);
+}
+
+[data-theme="light"] .timeline-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+
+[data-theme="light"] .timeline-title {
+  color: var(--text);
+}
+
+[data-theme="light"] .timeline-meta {
+  color: var(--muted);
+}
+
+[data-theme="light"] .table-wrap {
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+
+[data-theme="light"] .table th {
+  color: var(--text);
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--border);
+}
+
+[data-theme="light"] .table td {
+  color: var(--muted);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] .modal-panel {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid var(--border);
+}
+
+[data-theme="light"] .modal-head {
+  border-bottom: 1px solid var(--border);
+}
+
+[data-theme="light"] .modal-title {
+  color: var(--text);
+}
+
+[data-theme="light"] .viewer {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--muted);
+}
+
+/* Override forced dark theme for light mode */
+[data-theme="light"] body[data-require-session] .card {
+  background: var(--surface) !important;
+  border: 1px solid var(--border) !important;
+}
+
+[data-theme="light"] body[data-require-session] .card .kicker {
+  color: var(--brand) !important;
+}
+
+[data-theme="light"] body[data-require-session] .card .h2 {
+  color: var(--text) !important;
+}
+
+[data-theme="light"] body[data-require-session] .card .p {
+  color: var(--muted) !important;
+}
+
+[data-theme="light"] body[data-require-session] .card .list {
+  color: var(--muted) !important;
+}
+
+[data-theme="light"] body[data-require-session] .card .list li {
+  color: inherit;
+}
+
+/* Fix navigation icons in light mode - use higher specificity to override inline styles */
+[data-theme="light"] .nav-group .nav-item .nav-icon path {
+  stroke: var(--text) !important;
+}
+
+[data-theme="light"] .nav-group .nav-item:hover .nav-icon path {
+  stroke: var(--text) !important;
+}
+
+[data-theme="light"] .nav-group .nav-item.active .nav-icon path {
+  stroke: var(--brand) !important;
+}
+
+/* Fix mobile sidebar toggle icons in light mode */
+[data-theme="light"] .mobile-sidebar-toggle svg path {
+  stroke: var(--text) !important;
+}
+
+/* Fix theme toggle icons in light mode sidebar */
+[data-theme="light"] .sidebar .theme-toggle svg path {
+  stroke: var(--text) !important;
+}
+
+/* Fix any remaining SVG icons in light mode */
+[data-theme="light"] svg[aria-hidden="true"] path {
+  stroke: var(--text) !important;
+}
+
 /* Responsive */
 @media (max-width: 1060px) {
   .kpi-grid {

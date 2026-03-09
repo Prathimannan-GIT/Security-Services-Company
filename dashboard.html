@@ -141,7 +141,6 @@
           </svg>
           <span style="margin-left: 8px;">Toggle Theme</span>
         </button>
-        <a class="btn" href="index.html">Return to Website</a>
         <a class="btn primary" href="#" data-logout>Logout</a>
       </div>
     </aside>
@@ -290,20 +289,7 @@
                 <label for="filterTo">To</label>
                 <input class="input" id="filterTo" type="date" />
               </div>
-              <div class="field" style="min-width: 240px;">
-                <label for="filterCategory">Category</label>
-                <select class="input" id="filterCategory">
-                  <option value="">All categories</option>
-                  <option value="Employee Entry">Employee Entry</option>
-                  <option value="Visitor Access">Visitor Access</option>
-                </select>
-              </div>
-              <div class="field" style="min-width: 260px;">
-                <label for="filterSite">Site</label>
-                <select class="input" id="filterSite">
-                  <option value="">All sites</option>
-                </select>
-              </div>
+              
               <div style="display:flex; gap: 10px; flex-wrap: wrap; align-items: center;">
                 <button class="btn small" type="button" id="resetAccessFilters">Reset</button>
                 <span class="helper">Visible rows: <strong id="accessCount"
@@ -342,44 +328,7 @@
           </div>
 
           <div class="cards-2">
-            <div class="card">
-              <div class="kicker">New Request</div>
-              <h2 class="h2">Create a service request</h2>
-              <form id="requestForm" class="form-grid" style="margin-top: 12px;" novalidate>
-                <div class="field">
-                  <label for="reqType">Request Type</label>
-                  <select class="input" id="reqType" name="reqType" required>
-                    <option value="">Select a request type</option>
-                    <option value="Request additional guards">Request additional guards</option>
-                    <option value="Request temporary surveillance">Request temporary surveillance</option>
-                    <option value="Risk reassessment request">Risk reassessment request</option>
-                  </select>
-                  <div class="error" id="reqTypeError" hidden>Please select a request type.</div>
-                </div>
-
-                <div class="field">
-                  <label for="reqSite">Site</label>
-                  <select class="input" id="reqSite" name="reqSite" required>
-                    <option value="">Select a site</option>
-                  </select>
-                  <div class="error" id="reqSiteError" hidden>Please select a site.</div>
-                </div>
-
-                <div class="field">
-                  <label for="reqDetails">Request Details</label>
-                  <textarea class="input" id="reqDetails" name="reqDetails" rows="5"
-                    placeholder="Provide timing, scope, headcount (if applicable), and any operational constraints."
-                    required></textarea>
-                  <div class="helper">Include dates, shifts, or compliance constraints so we can respond quickly.</div>
-                  <div class="error" id="reqDetailsError" hidden>Please provide at least 20 characters of details.</div>
-                </div>
-
-                <div style="display:flex; gap: 10px; flex-wrap: wrap; align-items: center;">
-                  <button class="btn primary" type="submit">Submit Request</button>
-                  <span class="helper" id="requestStatus" role="status" aria-live="polite"></span>
-                </div>
-              </form>
-            </div>
+            
 
             <div class="card">
               <div class="kicker">Status Tracking</div>
@@ -511,14 +460,7 @@
         </div>
       </section>
 
-      <!-- Footer -->
-      <footer class="site-footer" style="margin-top: 18px;">
-        <div class="footer-bottom">
-          <div class="container">
-            © 2026 Sentinel Secure Services. All rights reserved. Unauthorized access is prohibited.
-          </div>
-        </div>
-      </footer>
+      
     </main>
   </div>
 
